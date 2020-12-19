@@ -1,0 +1,13 @@
+<Label text="News & Messages" class="news-header"></Label>
+<RadListView [items]="newsList" tkExampleTitle tkToggleNavButton height="250" (itemTap)="onItemTap($event)">
+    <ng-template tkListItemTemplate let-item="item">
+        <GridLayout columns="110, *" class="item-template-style">
+            <StackLayout col="0">
+                <Label [text]="item.date" class="title"></Label>
+            </StackLayout>
+            <StackLayout col="1">
+                <Label [text]="item.message" class="title"></Label>
+            </StackLayout>
+        </GridLayout>
+    </ng-template>
+</RadListView>

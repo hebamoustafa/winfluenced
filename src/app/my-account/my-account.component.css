@@ -1,0 +1,12 @@
+
+TabStripItem.first, 
+TabStripItem.first .lable, 
+TabStripItem.second, 
+TabStripItem.second .lable {
+    color: #000000;
+}
+
+TabStripItem.first:active, TabStripItem.second:active {
+    background-color: #ffffff;
+    color: #000000;
+}

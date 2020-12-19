@@ -1,0 +1,141 @@
+<ActionBar class="action-bar">
+    <Label text="MY ACCOUNT" class="title"></Label>
+</ActionBar>
+
+<Tabs offscreenTabLimit="0">
+    <TabStrip>
+        <TabStripItem class="first">
+            <Label text="Personal" class="lable"></Label>
+        </TabStripItem>
+        <TabStripItem class="second">
+            <Label text="Payment" class="lable"></Label>
+        </TabStripItem>
+    </TabStrip>
+    <TabContentItem>
+        <ScrollView>
+            <StackLayout class="p-10">
+
+                <GridLayout rows="auto, auto,auto,auto,auto,auto,auto,auto,auto,auto">
+
+                    <GridLayout row="0" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Name:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{ affiliate?.contacts?.contact_info.first_name + ' ' + affiliate?.contacts?.contact_info.last_name }}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="1" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Email:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.contacts?.contact_info.email_address}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="2" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Phone:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.contacts?.contact_info.phone_work}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="3" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Account Manager:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.account_managers?.contact?.contact_name}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="4" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Address:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.address?.street_1 +' '+ affiliate?.address?.street_2}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="5" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="City:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.address?.city}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="6" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Country:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.address?.country}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="7" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Website:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left" text="{{affiliate?.website}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="8" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Status:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.account_status?.account_status_name}}"></Label>
+                    </GridLayout>
+
+                    <GridLayout row="9" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Date Created:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{affiliate?.date_created}}"></Label>
+                    </GridLayout>
+
+                    <ActivityIndicator rowSpan="10" color="black" [busy]="loading"></ActivityIndicator>
+
+                </GridLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </TabContentItem>
+    <TabContentItem>
+        <ScrollView>
+            <StackLayout class="p-10">
+
+                <GridLayout rows="auto,auto,auto,auto,auto,auto">
+
+                    <GridLayout row="0" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Billing Cycle:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{ affiliate?.billing_cycle?.billing_cycle_name }}">
+                        </Label>
+                    </GridLayout>
+
+                    <GridLayout row="1" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Currency:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{ affiliate?.currency_settings?.currency?.currency_name}}">
+                        </Label>
+                    </GridLayout>
+
+                    <GridLayout row="2" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Payment Type:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{ affiliate?.payment_type?.payment_type_name }}">
+                        </Label>
+                    </GridLayout>
+
+                    <GridLayout row="3" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Min. Payment:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{ affiliate?.minimum_payment_threshold }}">
+                        </Label>
+                    </GridLayout>
+
+                    <GridLayout row="4" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Auto Payment Fee:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left"
+                            text="{{ affiliate?.auto_payment_fee }}">
+                        </Label>
+                    </GridLayout>
+
+                    <GridLayout row="5" columns="150,*" rows="auto" class="h3 m-5 w-full">
+                        <Label text="Pay VAT:" row="0" col="0"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left" *ngIf="affiliate?.pay_vat"
+                            text="Yes"></Label>
+                        <Label textWrap="true" row="0" col="1" class="text-left" *ngIf="!affiliate?.pay_vat"
+                            text="No"></Label>
+                    </GridLayout>
+
+                    <ActivityIndicator rowSpan="6" color="black" [busy]="loading"></ActivityIndicator>
+
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </TabContentItem>
+</Tabs>

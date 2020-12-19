@@ -1,0 +1,38 @@
+<ActionBar class="action-bar">
+    <!-- <NavigationButton android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
+    </NavigationButton> -->
+    <Label text="EARNINGS" class="title"></Label>
+</ActionBar>
+
+<ScrollView>
+
+    <StackLayout class="home-panel p-1">
+
+        <GridLayout rows="auto, auto">
+
+        <StackLayout row="0" class="section">
+            <!--Add your page content here-->
+            <Label textWrap="true" text="Pending Payout" class="h3"></Label>
+            <Label textWrap="true" text="{{ pending || '' }}" class="h2"></Label>
+
+            <Label textWrap="true" text="Approved Payout" class="h3 mt-8"></Label>
+            <Label textWrap="true" text="{{ approved || '' }}" class="h2"></Label>
+
+        </StackLayout>
+       
+        <StackLayout row="1" class="section">
+            <Label textWrap="true" text="Next Payment" class="h3"></Label>
+            <Label textWrap="true" text="{{ nextPayment || '' + ' ' + currencySymbol || '' }}" class="h2"></Label>
+
+            <Label textWrap="true" text="Year to date Paid" class="h3 mt-8"></Label>
+            <Label textWrap="true" text="{{ yearToDatePaid || '' + ' ' + currencySymbol || '' }}" class="h2"></Label>
+
+        </StackLayout>
+
+        <ActivityIndicator rowSpan="2" color="white" [busy]="loading"></ActivityIndicator>
+
+        </GridLayout>
+
+    </StackLayout>
+
+</ScrollView>

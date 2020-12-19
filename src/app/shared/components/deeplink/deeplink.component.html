@@ -1,0 +1,10 @@
+<GridLayout height="40" row="1" columns="*, 40" class="deeplink">
+    <StackLayout col="0" class="input-field">
+        <TextField class="input" hint="Paste the link to get the tracking link" keyboardType="url" autocorrect="false"
+            autocapitalizationType="none" [(ngModel)]="deeplink.url" returnKeyType="done" (returnPress)="submit()">
+        </TextField>
+    </StackLayout>
+    <StackLayout col="1" verticalAlignment="center" class="icon-button">
+        <Label text="&#xf06e;" class="fas t-32 icon" (tap)="submit()"></Label>
+    </StackLayout>
+</GridLayout>

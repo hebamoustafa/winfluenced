@@ -1,0 +1,48 @@
+.menu {
+  font-size: 8;
+}
+
+.date-filter {
+  text-align: center;  
+  margin-top: 2;
+}
+
+.balance-summary {
+    text-align: center;  
+    color: #ffffff;
+    background-color: #1E1E1E;
+}
+
+.balance-summary .conversion {
+  border-left-color: #ffffff;
+  border-right-color: #ffffff;
+  border-left-width: 1;
+  border-right-width: 1;
+}
+
+.balance-summary .title {
+    color: #ffffff;
+    font-size: 16;    
+  }
+  
+ .balance-summary .ammount {
+    color: #ffffff;
+    font-size: 16;
+    font-weight: 600;   
+  }
+
+  .mt-10 {
+    margin-top: 10px;
+  }
+
+  .brand-section {
+    border-width: 1;
+    border-color:#1E1E1E;
+    padding: 1;
+    margin-top: 2;
+    margin-bottom: 2;
+  }
+
+  .logo {   
+    height: 50;   
+  }

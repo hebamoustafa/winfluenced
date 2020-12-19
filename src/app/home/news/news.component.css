@@ -1,0 +1,19 @@
+.news-header {
+    background-color: #1E1E1E;    
+    color: #ffffff;
+    padding: 10px;    
+}
+
+.item-template-style{
+    border-width:1;
+    border-color:#1E1E1E;
+    background-color: #ffffff;  
+    margin: 1px;  
+}
+
+.item-template-style .title {
+    font-size: 14;
+    padding-top: 0;
+    padding-bottom: 0;
+    color:#1E1E1E;
+}

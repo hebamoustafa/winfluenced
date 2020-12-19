@@ -1,0 +1,35 @@
+<ActionBar class="action-bar">
+    <!-- <NavigationButton android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
+    </NavigationButton> -->
+    <Label text="COUPONS & OFFERS" class="title"></Label>
+</ActionBar>
+<ScrollView>
+    <StackLayout class="p-10">       
+        <ListView [items]="offerList" class="offer-list" height="1200">
+            <ng-template let-item="item">
+                <GridLayout columns="*, 200" rows="auto" class="offer-list-item">
+                    <StackLayout col="0" row="0" height="50" width="100">
+                        <Image *ngIf="item?.offer_image_link !== ''" src="{{item.offer_image_link}}" width="100"
+                            height="100" stretch="aspectFill" class="badge"
+                            [nsRouterLink]="['/coupons/detail/' + item.offer_id]">
+                        </Image>
+                        <Label *ngIf="item.offer_image_link === ''" row="0" col="0" textWrap="true"
+                            [text]="item.offer_name" class="bold brand-name"
+                            [nsRouterLink]="['/coupons/detail/' + item.offer_id]"></Label>
+                    </StackLayout>
+
+                    <StackLayout col="1" row="0">
+                        <!-- <Label [text]="getPercentage(item.offer_contracts.offer_contract_info)" class="amount"></Label> -->
+                        <Button textWrap="true" row="0" col="1" class="btnWebsite" text="Go to Brand Website"
+                            (tap)="onBrandWebsiteTap(item.offer_contracts.offer_contract_info)">
+                        </Button>
+                    </StackLayout>
+
+                    <Label row="1" col="*" textWrap="true" [text]="item.offer_description"></Label>
+
+                </GridLayout>
+
+            </ng-template>
+        </ListView>
+    </StackLayout>
+</ScrollView>

@@ -1,0 +1,31 @@
+.home-panel{
+    vertical-align: top;  
+    text-align: center;  
+    font-size: 20;
+}
+
+.description-label{
+    margin-bottom: 5;
+}
+
+.line-break {
+    height: 1px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.section {
+
+    margin-top: 2;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    padding: 5;
+}
+
+.section .h3, .section .h2 {
+    color: #ffffff;
+}
+
+.mt-8 {
+    margin-top: 8;
+}

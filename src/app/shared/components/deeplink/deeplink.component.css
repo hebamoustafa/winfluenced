@@ -1,0 +1,29 @@
+
+ .deeplink {
+    
+    background-color: #fff;
+    border-color: #1E1E1E;
+    border-width: 1;
+
+  }
+
+  .deeplink .input-field .input {   
+     background-color: #fff;
+      color: #6e6d6d;     
+      placeholder-color: #6e6d6d;
+      font-size: 16px;
+      height: 100%;
+      width: 100%;    
+      padding: 0 10 0 10;
+      margin: 0;
+  }
+  
+  .deeplink .icon-button{
+    text-align: center;
+    vertical-align: middle;  
+  }
+
+  .deeplink .icon-button .icon {
+    font-size: 20;
+    color: #22292f;
+  }

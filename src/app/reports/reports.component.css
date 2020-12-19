@@ -1,0 +1,14 @@
+TabStripItem.first, 
+TabStripItem.first .lable, 
+TabStripItem.second, 
+TabStripItem.second .lable,
+TabStripItem.third,
+TabStripItem.third .lable
+{
+    color: #000000;
+}
+
+TabStripItem.first:active, TabStripItem.second:active, TabStripItem.third:active {
+    background-color: #ffffff;
+    color: #000000;
+}

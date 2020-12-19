@@ -1,0 +1,54 @@
+<ScrollView>
+    <GridLayout rows="160, 40, *" class="p-10">
+        <StackLayout row="0">
+            <RadCartesianChart allowAnimation="true" style="font-size: 12;">
+                <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+                <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+                <LineSeries tkCartesianSeries [items]="categoricalSource" categoryProperty="date"
+                    valueProperty="clicks">
+                </LineSeries>
+            </RadCartesianChart>
+        </StackLayout>
+        <StackLayout row="1">
+            <GridLayout row="1" columns="45, 160, 35, 160">
+                <StackLayout col="0" verticalAlignment="center">
+                    <label text="From:"></label>
+                </StackLayout>
+                <StackLayout col="1" verticalAlignment="center">
+                    <DatePickerField hint="Date from" pickerTitle="select date from" [maxDate]="maxDate"
+                        [date]="startDate" (dateChange)="onStartDateChanged($event)"></DatePickerField>
+                </StackLayout>
+                <StackLayout col="2" verticalAlignment="center">
+                    <label text="To:"></label>
+                </StackLayout>
+                <StackLayout col="3" verticalAlignment="center">
+                    <!-- locale="de_DE" -->
+                    <DatePickerField hint="Date to" pickerTitle="select date to" dateFormat="dd MMM, yyyy"
+                        [maxDate]="maxDate" [date]="endDate" (dateChange)="onEndDateChanged($event)"></DatePickerField>
+                </StackLayout>
+            </GridLayout>
+
+        </StackLayout>
+        <StackLayout row="2">
+            <RadListView [items]="summaryList" tkExampleTitle tkToggleNavButton height="500">
+                <ng-template tkListItemTemplate let-item="item" let-odd="odd">
+                    <GridLayout columns="*, 80, 80, 80" class="list-item"
+                        [backgroundColor]="odd ? '#FCFCFC' : '#FFFFFF'">
+                        <Label col="0" [text]="item.site_offer_name" class="title"></Label>
+                        <Label col="1" [text]="item.clicks" class="number"></Label>
+                        <Label col="2" [text]="item.revenue" class="number"></Label>
+                        <Label col="3" [text]="item.epc" class="number"></Label>
+                    </GridLayout>
+                </ng-template>
+                <ng-template tkListViewHeader>
+                    <GridLayout columns="*, 80, 80, 80" [backgroundColor]="'#E7E6E6'" class="list-header">
+                        <Label col="0" text="Offer" class="title"></Label>
+                        <Label col="1" text="Clicks" class="number"></Label>
+                        <Label col="2" text="Revenue" class="number"></Label>
+                        <Label col="3" text="EPC" class="number"></Label>
+                    </GridLayout>
+                </ng-template>
+            </RadListView>
+        </StackLayout>
+    </GridLayout>
+</ScrollView>

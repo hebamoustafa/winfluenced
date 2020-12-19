@@ -1,0 +1,54 @@
+.page {
+    align-items: center;
+    flex-direction: column;
+  }
+  .form {
+    margin-left: 10;
+    margin-right: 10;
+    flex-grow: 1;
+    vertical-align: middle;
+   
+  }
+  
+  .logo {
+    margin-bottom: 12;
+    height: 90;
+    font-weight: bold;
+  }
+   
+  .input-field {
+    margin-bottom: 25;
+  }
+  .input {
+    font-size: 18;
+    width: 90%;
+    /* placeholder-color: #A8A8A8; */
+  }
+ 
+  
+  .login-label {
+    /* horizontal-align: center; */
+    color: #A8A8A8;
+    font-size: 16;
+  }
+  .sign-up-label {
+    margin-bottom: 20;
+  }
+  .bold {
+    color: #000000; 
+  }
+
+  .btn-login {
+    background-color: #1E1E1E;
+    color: #ffffff;
+}
+
+  
+  .container-padding {
+    padding-left: 50;
+    padding-right: 50;
+    padding-top: 20;
+  }
+
+
+  

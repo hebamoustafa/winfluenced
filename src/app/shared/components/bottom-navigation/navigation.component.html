@@ -1,0 +1,37 @@
+<GridLayout columns="*, *, *, *, *" height="74" row="1" class="bottom-navigation">
+    <GridLayout col="0" rows="auto, *" class="bottom-navigation-item" 
+        [class.selected]="isComponentSelected('/home')"
+        (tap)="onNavItemTap('/home')" verticalAlignment="center">
+        <Label  text="&#xf015;" class="fas t-36 icon"></Label>       
+        <Label row="1" text="Home" class="label"></Label>
+    </GridLayout>
+
+    <GridLayout col="1" rows="auto, *" class="bottom-navigation-item"
+    [class.selected]="isComponentSelected('/coupons')"
+        (tap)="onNavItemTap('/coupons')" verticalAlignment="center">
+        <Label row="0" text="&#xf02b;" class="fas t-36 icon"></Label>
+        <Label row="1" text="Coupons" class="label"></Label>
+    </GridLayout>
+
+    <GridLayout col="2" rows="auto, *" class="bottom-navigation-item"
+    [class.selected]="isComponentSelected('/reports')" 
+        (tap)="onNavItemTap('/reports')" verticalAlignment="center">
+        <Label row="0" text="&#xf201;" class="fas t-36 icon"></Label>
+        <Label row="1" text="Reports" class="label"></Label>
+    </GridLayout>
+
+    <GridLayout col="3" rows="auto, *" class="bottom-navigation-item"
+    [class.selected]="isComponentSelected('/earnings')"
+         (tap)="onNavItemTap('/earnings')" verticalAlignment="center">
+        <Label row="0" text="&#xf291;" class="fas t-36 icon"></Label>
+        <Label row="1" text="Earnings" class="label"></Label>
+    </GridLayout>
+
+    <GridLayout col="4" rows="auto, *" class="bottom-navigation-item" 
+    [class.selected]="isComponentSelected('/account')"
+        (tap)="onNavItemTap('/account')" verticalAlignment="center">
+        <Label row="0" text="&#xf5fd;" class="fas t-36 icon"></Label>
+        <Label row="1" text="Account" class="label"></Label>
+    </GridLayout>
+
+</GridLayout>

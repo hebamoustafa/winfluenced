@@ -1,0 +1,136 @@
+<ActionBar class="action-bar">
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
+    </NavigationButton>
+    <Label text="COUPON & OFFER DETAILS" class="title"></Label>
+</ActionBar>
+<ScrollView>
+    <StackLayout class="p-10">
+
+        <GridLayout columns="*,220" rows="auto" class="h3 m-5 w-full" verticalAlignment="center">
+
+            <Image *ngIf="offer?.offer_image_link !== ''" src="{{offer?.offer_image_link}}" height="80"
+                stretch="aspectFill" row="0" col="0" class="brand-image">
+            </Image>
+
+            <Label *ngIf="offer?.offer_image_link === ''" row="0" col="0" textWrap="true" text="{{ offer?.offer_name }}"
+                class="bold brand-name"></Label>
+
+            <Button textWrap="true" row="0" col="1" class="btnWebsite" text="Go to Brand Website"
+                (tap)="onBrandWebsiteTap()">
+            </Button>
+        </GridLayout>
+
+        <StackLayout class="hr mt-4">
+        </StackLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Campaign Rules:" class="bold"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Offer Description:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.offer_description}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Advertiser Terms:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.restrictions}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Restrictions:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.advertiser_extended_terms}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Testing Instructions:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.testing_instructions}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Tiers:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.tiers}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Tags:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.tags}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Allowed Media Types:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.allowed_media_types}}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="200,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Click Cookie Days:" row="0" col="0" class="bold"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" text="{{ offer?.click_cookie_days }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="200,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Impression Cookie Days:" row="0" col="0" class="bold"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" text="{{ offer?.impression_cookie_days }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="*" rows="auto" class="w-full margin-y-5">
+            <Label row="0" col="0" text="Notes:" class="bold"></Label>
+            <Label row="1" col="0" textWrap="true" text="{{offer?.notes}}"></Label>
+        </GridLayout>
+
+        <!-- <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Offer:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" text="{{ offer?.offer_name }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Advertiser:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left"
+                text="{{ offer?.advertiser?.advertiser_name }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Vertical:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left"
+                text="{{ offer?.vertical?.vertical_name }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Offer Type:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left"
+                text="{{ offer?.offer_type?.offer_type_name }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Offer Detail:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" text="{{ offer?.offer_description }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Discount:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" [text]="getPercentage()"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Website:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" [text]="getOfferUrl()"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Offer Status:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left"
+                text="{{ offer?.offer_status?.offer_status_name }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Created On:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" text="{{ offer?.date_created }}"></Label>
+        </GridLayout>
+
+        <GridLayout columns="150,*" rows="auto" class="h3 m-5 w-full">
+            <Label text="Expiration:" row="0" col="0"></Label>
+            <Label textWrap="true" row="0" col="1" class="text-left" text="{{ offer?.expiration_date }}"></Label>
+        </GridLayout> -->
+
+
+    </StackLayout>
+</ScrollView>

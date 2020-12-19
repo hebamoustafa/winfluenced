@@ -1,0 +1,7 @@
+<GridLayout rows="*, auto,auto" class="page" tkMainContent>
+    <StackLayout row="0">
+        <page-router-outlet></page-router-outlet>
+    </StackLayout>
+    <app-bottom-deeplink row="1" *ngIf="isLoggedIn"></app-bottom-deeplink>
+    <app-bottom-navigation row="2"  *ngIf="isLoggedIn"></app-bottom-navigation>
+</GridLayout>
